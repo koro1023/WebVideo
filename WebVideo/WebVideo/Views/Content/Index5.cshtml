@@ -1,0 +1,65 @@
+﻿@model IEnumerable<WebVideo.Models.Photos>
+
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+ 
+</head>
+<body>
+    <div id="scrolList_photo">
+        @Html.Partial("_Index5");
+    </div>
+
+    <div id="loading2"><img src='@Url.Content("~/Content/images/time (33).gif")' /></div>
+
+    <script src="@Url.Content("~/Scripts/jquery-1.10.2.js")"></script>
+    <script src="@Url.Content("~/Scripts/bootstrap.js")"></script>
+    <script src="@Url.Content("~/Scripts/respond.js")"></script>
+
+    <script type="text/javascript">
+$(function () {
+
+    $('div#loading2').hide();
+
+    var page = 0;
+    var _inCallback = false;
+    function loadItems() {
+        if (page > -1 && !_inCallback) {
+            _inCallback = true;
+            page++;
+            $('div#loading2').show();
+
+            $.ajax({
+                type: 'GET',
+                url: '/Content/Index5/' + page,
+                success: function (data, textstatus) {
+                    if (data != '') {
+                        $("div#scrolList_photo").append(data);
+                    }
+                    else {
+                        page = -1;
+                    }
+                    _inCallback = false;
+                    $("div#loading2").hide();
+                }
+            });
+        }
+    }
+    // обработка события скроллинга
+    $(window).scroll(function () {
+        if ($(window).scrollTop() == $(document).height() - $(window).height()) {
+
+            loadItems();
+        }
+    });
+})
+    </script>
+</body>
+</html>
+
+

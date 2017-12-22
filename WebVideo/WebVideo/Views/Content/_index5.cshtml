@@ -1,0 +1,17 @@
+﻿@model IEnumerable<WebVideo.Models.Photos>
+
+
+<div class="wrapper-photo">
+    @foreach (var item in Model)
+    {
+        <div class="img-context">
+
+            <img src=@item.Link />
+            <div class="name-of-photo">
+                @item.Name
+            </div>
+
+        </div>
+    }
+</div>
+

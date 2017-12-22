@@ -1,0 +1,20 @@
+﻿@model WebVideo.Models.Photos
+@{
+    ViewBag.Title = "Upload Photo";
+}
+<h3>Виберіть файл для загрузки</h3>
+@using (Html.BeginForm("UploadPhoto", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <div class=" = item">
+        <label>Ім'я</label>
+        @Html.EditorFor(model=>model.Name)
+    </div>
+
+     
+    <input type="submit" value="Загрузить" />
+    <input type="file" name="upload" /><br>
+
+}
+
+
+    

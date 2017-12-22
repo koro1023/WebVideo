@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href="~/Content/css/main2.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="~/new/style.css" />
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css" />
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    
+    
+  
+    <title>Untitled Document</title>
+</head>
+
+<body>
+  
+    <div id="video-bg">
+        <video width="100%" height="auto" preload="auto" autoplay="autoplay"
+               loop="loop">
+            <source src="@Url.Content("~/Content/images/banner.webm")" type="video/webm" />
+        </video>
+    </div>
+ 
+    <div class="wrapper-nav">
+        <ul id="navigation">
+            <li><a class="home" href=@Url.Action("Index", "Home")></a></li>
+            <li><a class="services" href="@Url.Action("Index5", "Content")"></a></li>
+            <li><a class="portfolio" href="@Url.Action("Index3", "Content")"></a></li>
+            <li><a class="about" href="@Url.Action("Index", "Home")"></a></li>
+            <li><a class="contact" href="@Url.Action("Admin", "Content")"></a></li>
+        </ul>
+    </div>
+    @RenderBody()
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>    
+    <script type="text/javascript" src="@Url.Content("~/new/jquery.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/new/jquery.easing.1.3.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/new/sprite.js")"></script>
+  
+
+</body>
+</html>

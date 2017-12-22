@@ -1,0 +1,26 @@
+﻿@model WebVideo.Models.Videos
+@{
+    ViewBag.Title = "View";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h3 > Введіть дані </h3>
+
+@using (Html.BeginForm("UploadVideo","Home"))
+{
+
+    <div class=" = item">
+        <label>Ім'я</label>
+        @Html.EditorFor(model => model.Name)
+    </div>
+
+    <div class=" = item">
+        <label>Ссилка на відео</label>
+        @Html.EditorFor(model => model.Link)
+    </div>
+
+   
+
+    <input type="submit" value="Загрузить" />
+       
+};

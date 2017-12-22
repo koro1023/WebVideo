@@ -1,0 +1,18 @@
+﻿@model WebVideo.Models.Photos
+@{
+    ViewBag.Title = "GetPhotos";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>GetPhotos</h2>
+
+@if (Model.Link != null)
+{
+    
+    <div class="pull-left" style="margin-right: 10px">
+        <img  width="75" height="75"
+             src="@Url.Action("GetPhotos", "Content",
+                new {Model.ID })" />
+    </div>
+}
+

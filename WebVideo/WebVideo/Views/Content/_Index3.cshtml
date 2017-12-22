@@ -1,0 +1,12 @@
+﻿@model IEnumerable<WebVideo.Models.Videos>
+
+@foreach (var item in Model)
+{   <div class="wrapper-video">
+    <div class="video-content" width="420" height="345">
+        <iframe class="iframe" width="420" height="345" src=@item.Link></iframe>
+        <div class="name-of-video" width="420" height="345">
+            @item.Name
+        </div>
+    </div>
+    </div>
+} 
